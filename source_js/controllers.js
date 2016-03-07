@@ -17,7 +17,7 @@ app.controller('listController', ['$scope', '$http', function ($scope, $http) {
     $scope.input_title = "";
 
 
-    $http.get('../data/imdb250.json')
+    $http.get('./data/imdb250.json')
         .success(function (all_movie_data) {
             $scope.errorData = "YesYesYes";
             $scope.movie_data = all_movie_data;
@@ -43,7 +43,7 @@ app.controller('galleryController', ['$scope', '$http', function ($scope, $http)
 
     $scope.genre_this = 'all';
 
-    $http.get('../data/imdb250.json')
+    $http.get('./data/imdb250.json')
         .success(function (all_movie_data) {
             $scope.errorData = "YesYesYes";
             $scope.movie_data = all_movie_data;
@@ -63,7 +63,7 @@ app.controller('detailController', ['$scope', '$http', '$routeParams', function 
     $scope.movie_data_list = [];
     $scope.rank = parseInt($routeParams.rank);
 
-    $http.get('../data/imdb250.json')
+    $http.get('./data/imdb250.json')
         .success(function (all_movie_data) {
             $scope.movie_data = all_movie_data;
             for (var i = 0; i < all_movie_data.length; i++) {
