@@ -3,15 +3,15 @@ var app=angular.module("mainApp",["ngRoute"]);
 app.config(function ($routeProvider) {
     $routeProvider
         .when('/list', {
-            templateUrl : 'partials/list.html',
+            templateUrl : '../partials/list.html',
             controller: 'listController'
         })
         .when('/gallery', {
-            templateUrl : 'partials/gallery.html',
+            templateUrl : '../partials/gallery.html',
             controller: 'galleryController'
         })
         .when('/detail/:rank', {
-            templateUrl : 'partials/details.html',
+            templateUrl : '../partials/details.html',
             controller: 'detailController'
         })
         .otherwise({
