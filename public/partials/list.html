@@ -1,0 +1,32 @@
+<div ng-controller="listController">
+    <div class="row">
+        <fieldset class="small-12 medium-6 small-centered columns">
+            <input type="text" id="Movie Input" ng-model="input_title" placeholder="Movie Name" autofocus>
+
+            <select ng-model="asscending" ng-options="option.name for option in assOption"></select>
+
+
+            <input type="radio" ng-model="order" value="title" id="title"><label for="title">Title</label>
+            <input type="radio" ng-model="order" value="rank" id="rank"><label for="rank">Rank</label>
+        </fieldset>
+    </div>
+    <div class="row">
+        <div class="small-12 medium-6 small-centered columns">
+            <div ng-repeat="movie in movie_data_list | filter:input_title | orderBy:order:asscending.Asscend ">
+                <a href="#/detail/{{movie.rank}}">
+                    <div class="media-object hvr-grow">
+                        <div class="media-object-section">
+                            <div>
+                                <img class="list-image" ng-src="../data/images/{{movie.imdbID}}.jpg">
+                            </div>
+                        </div>
+                        <div class="media-object-section">
+                            <h3>{{movie.title}}</h3>
+                            <h4>Rank: {{movie.rank}}</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

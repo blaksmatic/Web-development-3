@@ -1,0 +1,26 @@
+<div ng-controller="galleryController">
+    <div class="row text-center labels">
+        <div class="small-12">
+            <button class="button hvr-round-corners" ng-click="genre_this = 'all'">All</button>
+            <button class="button hvr-round-corners" ng-click="genre_this = 'Action'">Action</button>
+            <button class="button hvr-round-corners" ng-click="genre_this = 'Sci-Fi'">Sci-Fi</button>
+            <button class="button hvr-round-corners" ng-click="genre_this = 'Adventure'">Adventure</button>
+            <button class="button hvr-round-corners" ng-click="genre_this = 'Crime'">Crime</button>
+            <button class="button hvr-round-corners" ng-click="genre_this = 'Comedy'">Comedy</button>
+            <button class="button hvr-round-corners" ng-click="genre_this = 'Thriller'">Thriller</button>
+            <button class="button hvr-round-corners" ng-click="genre_this = 'Western'">Western</button>
+            <button class="button hvr-round-corners" ng-click="genre_this = 'Romance'">Romance</button>
+            <button class="button hvr-round-corners" ng-click="genre_this = 'Drama'">Drama</button>
+            <button class="button hvr-round-corners" ng-click="genre_this = 'Musical'">Musical</button>
+            <button class="button hvr-round-corners" ng-click="genre_this = 'Mystery'">Mystery</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="columns small-6 medium-4 large-2"
+             ng-repeat="movie in movie_data_list | filter:{genre:genre_this}">
+            <a href="#/detail/{{movie.rank}}">
+                <img class="gallery-image" ng-src="./data/images/{{movie.imdbID}}.jpg">
+            </a>
+        </div>
+    </div>
+</div>

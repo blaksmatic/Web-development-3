@@ -1,0 +1,34 @@
+<div ng-controller="detailController">
+    <div class="row text-center ">
+        <div class="small-centered columns small-6 medium-8 ">
+            <a href="#/detail/{{rank - 1}}">
+                <button class="button hvr-round-corners" ng-show="rank != 1">Previous</button>
+            </a>
+            <a href="#/detail/{{rank + 1}}">
+                <button class="button hvr-round-corners " ng-show="rank != movie_data_list.length">Next</button>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-centered columns small-12 medium-8 ">
+            <div class="media-object stack-for-small">
+                <h3>{{movie.title}}</h3>
+                <div class="media-object-section">
+                    <div class="thumbnail">
+                        <img ng-src="./data/images/{{movie.imdbID}}.jpg">
+                    </div>
+                </div>
+
+                <div class="media-object-section main-section">
+                    <h4>Rank: {{movie.rank}}</h4>
+                    <h4>Synopsis: </h4>
+                    <h5> {{movie.plot}}</h5>
+                    <h5>Rating: {{movie.rated}} </h5>
+                    <h5>Released: {{movie.released}}</h5>
+                    <h5>Runtime: {{movie.runtime}} </h5>
+                    <h5>Awards: {{movie.awards}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

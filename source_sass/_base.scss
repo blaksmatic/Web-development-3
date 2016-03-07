@@ -1,1 +1,41 @@
 // Add any custom Sass & CSS here
+h1 {
+  font-family: "Oswald Regular", sans-serif;
+}
+
+.list-image {
+  height: 200px;
+  max-height: 100%;
+}
+
+.gallery-image {
+  height: 230px;
+  max-height: 100%;
+  margin-bottom: 20px;
+  &:hover {
+    @include transition(0.4);
+    opacity: 0.7;
+  }
+}
+
+.nav_bar {
+  font-family: "Oswald Regular", sans-serif;
+}
+
+.button {
+  @include transition(0.4);
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.labels {
+  font-family: "Oswald Regular", sans-serif;
+}
+
+.button:hover {
+  background-color: #3adb76;
+}
+
+.hvr-icon-wobble-horizontal:before{
+  text-align: left;
+}
